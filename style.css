@@ -1,0 +1,467 @@
+*{
+    box-sizing: border-box;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+body{
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    /* background-color: pink; */
+}
+.container{
+    height: 100vh;
+    background-image: url(./images/logo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* ===========================SIDEBAR=================== */
+.box{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+.box .box-shadow{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.7;
+    display: none;
+    transition: all 300ms ease;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: -300px;
+    height: 100vh;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: white;
+    z-index: 4;
+    transition: all 300ms ease;
+}
+.sidebar .btn{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.sidebar .btn .btn-rounded{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+.sidebar .btn .btn-rounded button{
+    background-color: black;
+    color: white;
+    width: 15rem;
+    height: 3rem;
+    font-size: 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+.sidebar .btn .btn-rounded button#btn-2{
+    background-color: white;
+    color: black;
+}
+.sidebar .btn .btn-rounded button#btn-2:hover{
+    background-color: #d2dae2;
+}
+.sidebar .btn .btn-rounded button#btn-1:hover{
+    background-color: #485460;
+}
+.sidebar .btn .texts{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.sidebar .btn .texts a{
+    color: black;
+    text-decoration: none;
+    font-size: 15px;
+}
+.sidebar .links{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+.sidebar .links .logo{
+    display: flex;
+    gap: 1rem;
+}
+.sidebar .links .logo img{
+    border-radius: 15%;
+}
+.sidebar .links .other-btn{
+    display: flex;
+    justify-content: space-around;
+    height: 2.5rem;
+}
+.sidebar .links .other-btn button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    width: 6rem;
+    border-radius: 25px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+}
+.sidebar .links .other-btn button:hover{
+    background-color: #d2dae2;
+}
+/* =================================NAV BAR============================================= */
+.container nav.transparent{
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+}
+.white{
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    background-color: white;
+    transition: all 300ms ease;
+    z-index: 3;
+}
+nav .menu{
+    margin-left: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+nav .menu .logo-container{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+nav .menu .logo-container img{
+    border-radius: 10%;
+    /* transition: all 300ms ease; */
+}
+nav .login{
+    margin-right: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+nav .login .btn{
+    height: 3rem;
+    width: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    border: none;
+    background-color: black;
+}
+nav .login a{
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    color: #dcdde1;
+}
+nav .login .btn-1{
+    gap: 0.5rem;
+    background-color: white;
+}
+nav .login .btn-1:hover{
+    background-color: #d1ccc0;
+}
+nav .login .btn-2:hover{
+    background-color: #485460;
+}
+nav .login .btn-1 a{
+    color: #2f3640;
+}
+nav .address{
+    width: 50rem;
+    height: 3.1rem;
+    display: flex;
+    align-items: center;
+    display: none; 
+    transition: all 300ms ease;
+}
+
+nav .address input{
+    height: 3rem;
+    width: 42rem;
+    border: none;
+    font-size: medium;
+    border-radius: 11px 0 0 11px;
+    outline: none;
+}
+nav .address button{
+    height: 3rem;
+    width: 5rem;
+    font-size: 15px;
+    border: none;
+    color: gray;
+    border-radius: 0 11px 11px 0;
+    cursor: pointer;
+}
+nav .address button:hover{
+    height: fit-content;
+    width: 5rem;
+    background-color: #d1ccc0;
+    color: black;
+    border-radius: 11px;
+}
+
+/* ====================================SUB CONTAINER==================== */
+.container .sub-cont{
+    position: absolute;
+    top: 15rem;
+    left: 2rem;
+}
+.sub-cont .heading{
+    font-size: 28px;
+    font-family: sans-serif;
+}
+.sub-cont .delivery-address{
+    display: flex;
+    gap: 0.5rem;
+}
+.sub-cont .delivery-address .icon{
+    background-color: white;
+    width: 35rem;
+    height: 3.5rem;
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* border-bottom: 2px solid black; */
+}
+.sub-cont .delivery-address .icon input{
+    height: 3rem;
+    width: 35rem;
+    border: none;
+    font-weight: 500;
+    font-size: 20px;
+    outline: none;
+}
+.sub-cont .delivery-address button{
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    width: fit-content;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 16px;
+    padding-right: 16px;
+    border: none;
+    cursor: pointer;
+}
+.sub-cont .delivery-address button:hover{
+    background-color: #485460;
+}
+.sub-cont .delivery-address select{
+    border: none;
+    text-align: center;
+    font-size: 15px;
+    /* padding: 0 1rem 0 1rem; */
+    border-radius: 8px;
+}
+.sub-cont .span a{
+    color: black;
+}
+.sub-cont .span p{
+    font-family: sans-serif;
+}
+/* ================================CRADS===================== */
+.cards{
+    margin: 2rem;
+    padding-top: 3rem;
+    margin-right: 20px;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+}
+.cards .card .img-text{
+    margin-top: -1rem;
+}
+.cards .card .img-text h2{
+    font-size: 28px;
+}
+.cards .card .img-text a{
+    color: black;
+}
+/* =====================CITIES========================= */
+.cities{
+    margin: 3rem;
+}
+.cities .city-text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cities .city-text h1{
+    font-size: 35px;
+}
+.cities .city-text a{
+    color: black;
+}
+.cities .map iframe{
+    width: 100%;
+    height: 400px;
+}
+.cities .city-name{
+    display: flex;
+    justify-content: space-around;
+}
+.cities .city-name .names{
+    font-size: 16px;
+    color: #353b48;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+/* ===============================COUNTRIES======================== */
+.countries{
+    margin: 3rem;
+}
+.countries .heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.countries .heading h1{
+    font-size: 35px;
+}
+.countries .heading a{
+    color: black;
+}
+.countries .country-name{
+    display: flex;
+    justify-content: space-around;
+}
+.countries .country-name .names{
+    font-size: 16px;
+    color: #353b48;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+/* ============================FOOTER================ */
+footer{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+    border-top: 1px solid lightgrey;
+}
+footer .footer-cont .heading{
+    display: flex;
+    align-items: center;
+}
+footer .doubts{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+footer .doubts .queries{
+    display: flex;
+    margin-left: 2rem;
+    gap: 12rem;
+}
+footer .doubts .queries .query{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+footer .doubts .queries .query a{
+    color: #2f3640;
+    text-decoration: none;
+}
+footer .doubts .queries .query a:hover{
+    text-decoration: underline;
+}
+footer .doubts .queries .query #span{
+    display: flex;
+    gap: 0.4rem;
+}
+footer .doubts .queries .query #span span{
+    font-size: 16px;
+    font-weight: 700;
+}
+footer .doubts .texts{
+    margin-top: 6rem;
+    color: #2f3640;
+}
+footer .doubts .texts .text-1{
+    margin-left: 8rem;
+    display: flex;
+    gap: 1rem;
+}
+footer .doubts .texts .text a{
+    color: #2f3640;
+    text-decoration: none;
+}
+footer .doubts .texts .text a:hover{
+    text-decoration: underline;
+}
+footer .doubts .texts .text-2{
+    margin-left: -15rem;
+    display: flex;
+    justify-content: space-between;
+}
+footer .footer-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+footer .footer-cont .icons{
+    display: flex;
+    font-size: 20px;
+    gap: 1rem;
+    cursor: pointer;
+    margin-bottom: 3.5rem;
+}
+footer .footer-cont .links{
+    display: flex;
+    justify-content: space-between;
+    width: 20rem;
+}
+footer .footer-cont .links .cont{
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 9rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+footer .footer-cont .links .cont .symbol-text{
+    color: #bdc3c7;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: center;
+}
+footer .footer-cont .links .cont .symbol-text h3{
+    margin: 5px;
+}
+footer .footer-cont .links .cont .symbol .fa-brands{
+    color: #bdc3c7;
+    font-size: 20px;
+}
